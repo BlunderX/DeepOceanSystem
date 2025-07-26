@@ -9,6 +9,7 @@ public class DeepOceanSystemApplication {
 
     public static void main(String[] args) {
         DefaultConfig.launcher();
+        //Launcher
         SpringApplication.run(DeepOceanSystemApplication.class, args);
     }
 

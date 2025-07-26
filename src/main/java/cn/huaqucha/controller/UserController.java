@@ -1,5 +1,6 @@
 package cn.huaqucha.controller;
 
+import cn.huaqucha.dto.UserDTO;
 import cn.huaqucha.entites.User;
 import cn.huaqucha.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,14 +21,11 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> userLogin(HttpSession session,
-                            HttpServletRequest request,
-                            @RequestParam(defaultValue = "") String email,
-                            @RequestParam(defaultValue = "") String phone,
-                            @RequestParam(defaultValue = "") String password) {
-        User user = userService.getUser(email, phone, password);
+                                            @RequestBody UserDTO userDTO) {
+        User user = userService.getUser(userDTO.getEmail(), userDTO.getPhone(), userDTO.getPassword());
         String token = userService.makeToken(user);
         session.setAttribute("token", token);
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok().body(token);
     }
 
     @PostMapping("/register")
@@ -43,9 +41,9 @@ public class UserController {
     }
 
     @PostMapping("/updatePassword")
-    public ResponseEntity<String> update(HttpServletRequest req,HttpSession session){
-        String id = req.getParameter("id");
-        String password = req.getParameter("password");
+    public ResponseEntity<String> update(@RequestBody UserDTO userDTO,HttpSession session){
+        String id = userDTO.getId();
+        String password = userDTO.getPassword();
         userService.userUpdatePassword(id, password);
         session.removeAttribute("token");
         return ResponseEntity.status(200).body("update success,please login");

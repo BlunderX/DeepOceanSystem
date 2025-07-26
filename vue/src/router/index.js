@@ -11,6 +11,16 @@ const routes = [
         component: () => import('@/view/user.vue'),
         name:'user',
         children: [
+            {
+                path:'login',
+                name:'login',
+                component:() => import('@/components/userController/login.vue')
+            },
+            {
+                path:'register',
+                name:'register',
+                component:() => import('@/components/userController/register.vue')
+            }
         ]
     }
 ]

@@ -29,8 +29,8 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> userRegister(HttpServletRequest req){
-        userService.userRegister(req.getParameter("email"), req.getParameter("phone"), req.getParameter("password"));
+    public ResponseEntity<String> userRegister(@RequestBody UserDTO userDTO) {
+        userService.userRegister(userDTO.getEmail(), userDTO.getPhone(), userDTO.getPassword());
         return ResponseEntity.ok("register success");
     }
 

@@ -3,9 +3,12 @@ import {createRouter, createWebHistory} from "vue-router";
 const routes = [
     {
         path: '/',
-        component: () => import('@/view/index.vue'),
-        name:'index',
-        meta:{title:'欢迎访问DeepOS'}
+        meta:{title:'欢迎访问DeepOS'},
+        components:{
+            default:() => import('../view/index.vue'),
+            header:() => import('../components/public/header.vue'),
+            footer:() => import('../components/public/footer.vue')
+        }
     },
     {
         path: '/user',

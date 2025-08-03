@@ -3,7 +3,6 @@ package cn.huaqucha.controller;
 import cn.huaqucha.dto.UserDTO;
 import cn.huaqucha.entites.User;
 import cn.huaqucha.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

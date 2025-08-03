@@ -1,12 +1,7 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <p>123456ffffffff</p>
-
+  <div></div>
 </template>
-
+<script setup lang="javascript">
+</script>
 <style scoped>
-
 </style>

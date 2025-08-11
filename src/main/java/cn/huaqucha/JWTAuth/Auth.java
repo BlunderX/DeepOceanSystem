@@ -1,7 +1,7 @@
 package cn.huaqucha.JWTAuth;
 
 import cn.huaqucha.entites.User;
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
@@ -44,7 +44,7 @@ public class Auth {
 
         builder.setClaims(claims);//载荷
         builder.setExpiration(calendar.getTime());//过期时间
-        builder.signWith(SignatureAlgorithm.HS256, key);//密钥，记得换成可配置的密钥
+        builder.signWith(SignatureAlgorithm.HS256, key);
 
         return builder.compact();
     }

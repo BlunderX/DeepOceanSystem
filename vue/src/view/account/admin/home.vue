@@ -1,10 +1,11 @@
-<template>
-
-</template>
 <script setup lang="ts">
+
 </script>
+
+<template>
+  <h1>123</h1>
+</template>
+
 <style scoped>
-#main{
-  width:100vh;
-}
+
 </style>

@@ -28,6 +28,9 @@ const toggleisDisabled = () =>{
   isDisabled.value = !isDisabled.value;
   isLoading.value = !isLoading.value;
 }
+const back = () =>{
+  router.push("/");
+}
 const form = reactive({
   id:'',
   password:''

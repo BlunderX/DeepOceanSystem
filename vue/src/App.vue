@@ -5,8 +5,13 @@
 <template>
   <div id="app" >
     <router-view name="header"></router-view>
-    <router-view></router-view>
+    <el-container class="AppContainer">
+      <router-view name="aside"></router-view>
+      <router-view></router-view>
+
+    </el-container>
     <router-view name="footer"></router-view>
+
   </div>
 </template>
 
@@ -18,6 +23,10 @@
 #app{
   height: 100vh;
   width: 100vw;
-  background-color: #2c3e50;
+  background-color: #ececec;
+}
+.AppContainer{
+  height: 92vh;
+  width: 100%;
 }
 </style>

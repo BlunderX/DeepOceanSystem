@@ -45,6 +45,6 @@ public class UserController {
         String password = userDTO.getPassword();
         userService.userUpdatePassword(id, password);
         session.removeAttribute("token");
-        return ResponseEntity.status(200).body("update success,please login");
+        return ResponseEntity.ok("update success");
     }
 }

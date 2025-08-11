@@ -2,10 +2,7 @@ package cn.huaqucha.mapper;
 
 
 import cn.huaqucha.entites.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -22,4 +19,19 @@ public interface UserMapper {
 
     @Update("update user set password = #{password} where id = #{id}")
     void updatePassword(String password, String id);
+
+    @Update("update user set nickname = #{nickname},name=#{name} where id = #{id}")
+    void updateProfile(String nickname, String name,String id);
+
+    @Update("update user set email = #{email} where id = #{id}")
+    void updateEmail(String email,String id);
+
+    @Update("update user set phone = #{phone} where id = #{id}")
+    void updatePhone(String phone,String id);
+
+    @Update("update user set userGroup = #{gid} where id = #{id}")
+    void updateUserGroup(int gid,String id);
+
+    @Delete("delete from user where id = #{id}")
+    void deleteUser(String id);
 }

@@ -7,5 +7,9 @@
 </template>
 
 <style scoped>
-
+#footer{
+  height:6vh;
+  width:90vw;
+  background-color: darkgray;
+}
 </style>
